@@ -1,0 +1,32 @@
+/* create class  */
+.modal-title h2{
+	color: midnightblue;
+	margin-left: 15px;
+}
+.class-form{
+	width: 500px;
+	border-radius: 5px 10px;
+	padding: 0 20px 40px 20px;
+}
+.class-form form{
+  margin-top: 30px;
+}
+.class-form form .class-detail{
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 15px;
+}
+.class-form form .class-detail p{
+	font-size: 14px;
+	color: midnightblue;
+}
+.class-form form .class-detail input{
+	margin-top: -15px;
+	border: none;
+	background-color: #fffde9;
+	border-bottom: 1px solid grey;
+}
+.class-form form div input[type=submit]{
+	margin-top: 20px;
+	padding: 3px 5px;
+}

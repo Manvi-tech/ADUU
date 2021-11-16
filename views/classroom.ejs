@@ -1,0 +1,41 @@
+
+<!-- classroom -->
+
+<body>
+  
+    <div id="classroom">
+
+         <!--class details edit -->
+         <% if(locals.user.id == classroom.creator.id){ %> 
+            <div class="class-form" style="margin: 6% 3% 3% 6%;">
+                <h1>Class Details</h1>
+                <form action="/class/update/<%= classroom.id %>" method="post" class="class-info">
+                    <div class="class-detail">
+                        <p>Class Name *</p>
+                        <input type="text" name="className" placeholder="<%= classroom.className %>" required>
+                    </div>
+                    <div class="class-detail">
+                        <p>Section</p>
+                        <input type="text" name="section" placeholder="<%= classroom.section %>" required>
+                    </div>
+                    <div class="class-detail">
+                        <p>Subject</p>
+                        <input type="text" name="subject" placeholder="<%= classroom.subject %>">
+                    </div>
+                    <div>
+                        <input type="submit" value="update">
+                    </div>
+                </form>
+            </div>
+               
+         <%}%>
+        
+        <!-- class link -->
+        <div class="class-link">
+            <p style="margin-bottom: -1px;">Invite Link</p>
+            <p><a href="#"><%= classroom.classLink %></a></p>
+        </div>
+
+    </div>
+
+</body>

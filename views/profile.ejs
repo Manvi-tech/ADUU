@@ -1,0 +1,68 @@
+<body>
+
+    <!-- classrooms of loggedIn User -->
+    <section id="my-classrooms">
+        <h2> My ClassRoom</h2>
+       
+        <div class="my-classes">   
+            <% for(i of loggedInUser.classRooms){ %> 
+                <div class="class">
+                    <div class="class-top">
+                        <div class="left">
+                            <span class="class-name"><%= i.className %>: <%= loggedInUser.name %> </span>
+                            <span>Subject: <%= i.subject %></span>
+                            <span>Section: <%= i.section %></span>
+                        </div>
+
+                        <!-- edit or delete class --> 
+                        <div class="dropdown">
+                            <button class="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                              <li><a class="dropdown-item" href="/class/enter/<%= i._id%>">Edit</a></li>
+                              <li><a class="dropdown-item" href="/class/delete/<%= i._id %>">Delete</a></li>
+                              <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="class-mid">
+                        <img src="/images/avatar.png" alt="">
+                    </div>
+                    <div class="class-bottom">
+                        <div>
+                            <a href="/class/enter/<%= i._id %>">Enter Class</a>
+                        </div>
+                    </div>
+                </div>      
+            <%}%>
+        </div>
+
+        <h2>Enrolled ClassRooms</h2>
+        <div class="my-classes">
+            <% for(i of loggedInUser.enrolledClasses){ %> 
+                <% if(i.creator.id != loggedInUser.id){ %>
+                <div class="class">
+                    <div class="class-top">
+                        <span class="class-name"><%= i.className %>: <%= loggedInUser.name %> </span>
+                        <span>Subject: <%= i.subject %></span>
+                        <span>Section: <%= i.section %></span>
+                    </div>
+                    <div class="class-mid">
+                        <img src="/images/avatar.png" alt="">
+                        <div>
+                            <a href="/class/enter/<%= i._id %>">Enter Class</a>
+                        </div>
+                    </div>
+                    <div class="class-bottom"></div>
+                </div>  
+                <%}%>    
+            <%}%>
+        </div>
+
+
+    </section>
+
+</body>

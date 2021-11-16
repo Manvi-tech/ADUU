@@ -1,0 +1,84 @@
+
+/* profile */
+#my-classrooms{
+	padding-left: 40px;
+	padding-top: 50px;
+}
+
+#my-classrooms h2{
+    margin-bottom: 25px;
+}
+
+.my-classes{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.my-classes .class{
+	height: 300px;
+	width: 350px;
+	border: 1px solid lightgrey;
+	border-radius: 5px 10px;
+	margin-right: 15px;
+    margin-bottom: 25px;
+}
+.my-classes .class:hover{
+	box-shadow: 5px 3px 10px 3px lightgrey;
+}
+.class .class-top,.class-bottom{
+   width: 100%;
+   border-radius: 5px 10px;
+}
+.class .class-top{
+    display: flex;
+    justify-content: space-between;
+    background-color: #e9edee;
+    height: 90px;
+}
+.class .class-top .left{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding-left: 10px;
+}
+.class .class-top .right{
+    float: right;
+}
+
+.class .class-top span{
+	font-size: 14px;
+	text-transform: capitalize;
+}
+.class .class-top .class-name{
+	font-size: 21px;
+	margin-bottom: 5px;
+}
+.class .class-bottom{
+   background-color: #e9edee;
+   height: 60px;
+   margin-top: 78px;
+   padding-top: 15px;
+}
+
+.class .class-mid img{
+	height: 70px;
+	width: 70px;
+	z-index: 2;
+	border-radius: 50%;
+	box-shadow: 3px 5px 4px 3px #deb9c6;
+	transform: translate(260px, -30px);
+}
+
+.class .class-bottom div a{
+	text-decoration: none;
+    text-align: center;
+    margin: 2%;
+    color: darkblue;
+    font-size: 20px;
+    border: 1px solid lightgrey;
+    padding: 5px;
+    background-color: #ffd8e5;
+    box-shadow: 5px 5px 5px lightgrey;
+}
+
