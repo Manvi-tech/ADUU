@@ -41,6 +41,7 @@ router.get('/google/redirect',
 //signing out
 router.get('/logout', function(req, res){
     req.logout();
+    req.flash('success', 'logged out');
     return res.redirect('/');
 });
 
