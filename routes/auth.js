@@ -28,12 +28,12 @@ router.post('/login', passport.authenticate(
 
 //signing up and logging in using gmail
 router.get('/google', passport.authenticate('google',{
-    scope: ['profile']
+    scope: ['profile', 'email']
 }));
 
 //after logging in through google, we need profile info of user using passport
 router.get('/google/redirect',
-    passport.authenticate('google'), 
+    passport.authenticate('google',{failureRedirect: '/auth/loginPage'}), 
     (req, res) => {
     return res.redirect('/user/profile');
 });

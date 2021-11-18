@@ -22,7 +22,7 @@
             <%}%>
            
             <% if(locals.user){ %> 
-                <li><a href="/user/profile">Profile</a></li>
+                <li><a href="/user/profile"><%= locals.user.username %></a></li>
                 <li><a href="/auth/logout">Logout</a></li>
             <% }else{ %>
                <li> <a href="/auth/loginPage">Account</a></li>

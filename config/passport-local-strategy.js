@@ -45,7 +45,7 @@ passport.checkAuthentication = function(req, res, next){
   if(req.isAuthenticated()){
       return next();
   }
-  return res.redirect('/user/signin');
+  return res.redirect('/auth/loginPage');
 }
 
 //req.user contains current signed in user,setting user in locals for views to access

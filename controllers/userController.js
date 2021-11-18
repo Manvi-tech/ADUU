@@ -9,6 +9,9 @@ module.exports.profile = async function(req, res){
         path: 'enrolledClasses',
         populate:{
             path: 'creator'
+        },
+        populate:{
+            path: 'students'
         }
     });
 

@@ -7,14 +7,16 @@ module.exports.userSignUp = async function(req, res){
         let user = await User.findOne({email: req.body.email});
         if(!user){
             await User.create({
-                name: req.body.name,
+                username: req.body.userName,
                 email: req.body.email,
                 password: req.body.password,
                 googleId: Math.random()*3
             });
-            return res.redirect('back');
+            req.flash('success', 'user signed up successfully');
+            return res.redirect('/user/profile');
        }else{
            //add flash message that user exists
+           req.flash('error', 'user already exists');
             return res.redirect('back');
        }
     }catch(err){

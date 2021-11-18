@@ -1,6 +1,6 @@
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/online_education_db');
+mongoose.connect('mongodb://localhost/education_platform_db');
 
 const db = mongoose.connection;
 db.on('error',console.error.bind(console, 'error connecting to db!'));

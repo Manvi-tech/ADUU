@@ -6,10 +6,10 @@ const passport = require('passport');
 
 
 // submitting form of create class
-router.post('/createRoom', classController.createRoom);
+router.post('/createRoom',passport.checkAuthentication, classController.createRoom);
 
 // submittting form of join class
-router.post('/join')
+router.post('/joinRoom', passport.checkAuthentication, classController.join);
 
 // enter classroom
 router.get('/enter/:classid', passport.checkAuthentication, classController.enter) 

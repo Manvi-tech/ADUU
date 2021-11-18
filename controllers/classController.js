@@ -7,22 +7,21 @@ const bcryptjs = require('bcryptjs');
 module.exports.createRoom = async function(req, res){
 
     const link = await bcryptjs.hash(req.body.classId, 10);
+    const currentUser = await User.findById(req.user._id);
 
     const newClass = await Class.create({
-        creator: req.user._id,
+        creator: currentUser,
         className: req.body.className,
         subject: req.body.subject,
         section: req.body.section,
         classLink: link
     });
 
-    const currentUser = await User.findById(req.user._id);
-
     await currentUser.classRooms.push(newClass);
-    await currentUser.enrolledClasses.push(newClass);
+    // await currentUser.enrolledClasses.push(newClass);
     currentUser.save();
 
-    return res.redirect('back');
+    return res.redirect('/user/profile');
     
 }
 
@@ -30,26 +29,32 @@ module.exports.createRoom = async function(req, res){
 module.exports.join = async function(req, res){
     const link = req.body.classLink;
     const classroom = await Class.findOne({classLink: link});
-    const currUser = req.user;
-
+    const currUser = await User.findById(req.user._id);
+    
     if(classroom){
         const userEnrolled = false;
+       
         for(i of classroom.students){
+            // checking if user already present inside the class
             if(i.id == currUser.id){
                 userEnrolled = true;
+                console.log('2')
                 break;
             } 
         }
 
-        if(!userEnrolled){
-            classroom.students.push(currUser);
-            currUser.enrolledClasses.push(classroom);
+        if(userEnrolled){
+             // already student of this class
+             req.flash('error', 'already in this class');
         }else{
-            // show noti : already student of this class
+            await classroom.students.push(currUser);
+            classroom.save();
+            await currUser.enrolledClasses.push(classroom);
+            currUser.save();
         }
-    }
-    else{
-        // display noti no such class exist, wrong link
+    }else{
+        // no such class exist, wrong link
+        req.flash('error', 'no class with this link exists');
     }
 
     return res.redirect('back');
