@@ -2,6 +2,7 @@
 const Class = require('../model/class');
 const User = require('../model/user');
 const bcryptjs = require('bcryptjs');
+const { v4: uuidv4 } = require('uuid');
 
 //submiting create class form, and adding it into db
 module.exports.createRoom = async function(req, res){
@@ -68,6 +69,31 @@ module.exports.enter = async function(req, res){
     return res.render('classroom', {
         classroom: classroom
     });
+}
+
+//teacher starting a class
+module.exports.startClass = async function(req, res){
+    try{
+         const classroom = await Class.findById(req.params.classid);
+         const user = await User.findById(req.user._id);
+
+         if(classroom.creator._id != user.id){
+            //  only teacher can start live class
+             return res.redirect('back');
+           
+         }
+         else{
+            //create place for teaching using webrtc
+            const roomid = uuidv4();
+            return res.render('onlineClass', {
+                roomId: roomid
+            });
+         }
+    }catch(err){
+        req.flash('error', err);
+        console.log(err);
+        return res.redirect('back');
+    }
 }
 
 //updating class details

@@ -27,6 +27,6 @@ module.exports.userSignUp = async function(req, res){
 
 // user posting signin form
 module.exports.userLogin = async function(req, res){
-    req.flash('success','successfully signed in')
+    req.flash('success', 'user signed in');
     return res.redirect('/user/profile');
 }

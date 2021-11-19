@@ -27,14 +27,21 @@
                     </div>
                 </form>
             </div>
-               
+              
+           <div class="class-link">
+                <!-- class link -->
+                <div>
+                    <p style="margin-bottom: -1px;">Invite Link</p>
+                    <p><%= classroom.classLink %></p>
+                </div>
+
+                <!-- class start -->
+                <div class="start-class">
+                    <a href="/class/start/<%= classroom._id %>">start</a>
+                </div>
+           </div>
+
          <%}%>
-        
-        <!-- class link -->
-        <div class="class-link">
-            <p style="margin-bottom: -1px;">Invite Link</p>
-            <p><a href="#"><%= classroom.classLink %></a></p>
-        </div>
 
     </div>
 

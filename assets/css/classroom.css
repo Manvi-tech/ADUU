@@ -20,3 +20,8 @@
 .class-link p{
     margin-left: 2%;
 }
+
+.class-link .start-class{
+    margin: 5% 2%;
+    font-size: 20px;
+}
