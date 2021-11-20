@@ -15,7 +15,8 @@ module.exports.createRoom = async function(req, res){
         className: req.body.className,
         subject: req.body.subject,
         section: req.body.section,
-        classLink: link
+        classLink: link,
+        roomId: uuidv4()
     });
 
     await currentUser.classRooms.push(newClass);
@@ -72,23 +73,13 @@ module.exports.enter = async function(req, res){
 }
 
 //teacher starting a class
-module.exports.startClass = async function(req, res){
+module.exports.liveClass = async function(req, res){
     try{
-         const classroom = await Class.findById(req.params.classid);
-         const user = await User.findById(req.user._id);
-
-         if(classroom.creator._id != user.id){
-            //  only teacher can start live class
-             return res.redirect('back');
-           
-         }
-         else{
-            //create place for teaching using webrtc
-            const roomid = uuidv4();
-            return res.render('onlineClass', {
-                roomId: roomid
-            });
-         }
+        const classroom = await Class.findOne({roomId: req.params.roomid});
+        // const user = await User.findById(req.user._id);
+        return res.render('onlineClass', {
+            roomId: req.params.roomid
+        });
     }catch(err){
         req.flash('error', err);
         console.log(err);

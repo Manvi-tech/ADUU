@@ -16,8 +16,8 @@ router.get('/enter/:classid', passport.checkAuthentication, classController.ente
 //update class details
 router.post('/update/:classid', passport.checkAuthentication, classController.update);
 
-// start class by a teacher
-router.get('/start/:classid', passport.checkAuthentication, classController.startClass);
+// enter live class
+router.get('/live/:roomid', passport.checkAuthentication, classController.liveClass);
 
 //delete classroom
 router.get('/delete/:classid', passport.checkAuthentication, classController.delete);

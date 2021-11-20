@@ -33,7 +33,7 @@
 .class .class-top{
     display: flex;
     justify-content: space-between;
-    background-color: #e9edee;
+    background-color: #fffbd4;
     height: 90px;
 }
 .class .class-top .left{

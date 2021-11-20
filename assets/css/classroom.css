@@ -7,21 +7,31 @@
 
 #classroom .class-link{
     margin: 6% 3% 3% 3%;
+    display: flex;
+    flex-direction: column;
+}
+.class-link .live-class-teacher a{
+    background-color: pink;
+    box-shadow: 5px 1px 3px 2px lightgray;
+    padding: 5px;
+    margin: 10px 0 20px 10px;
+}
+.class-link .invite-link{
+    margin-left: 2%;
+    margin-top: 30px;
+    padding-left: 2%;
     max-width: 600px;
     height: auto;
     max-height: 100px;
     background-color: #eaf8ff;
-    display: flex;
     word-break: break-word;
     border: 1px solid lightgrey;
-    flex-direction: column;
 }
 
-.class-link p{
-    margin-left: 2%;
+.live-class-student{
+    background-color: pink;
+    box-shadow: 5px 1px 3px 2px lightgray;
+    padding: 5px;
+    margin: 80px 0 40px 40px;
 }
 
-.class-link .start-class{
-    margin: 5% 2%;
-    font-size: 20px;
-}

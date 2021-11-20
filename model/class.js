@@ -15,6 +15,10 @@ const classSchema = new mongoose.Schema({
         type: String,
         unique: true
     },
+    roomId:{
+       type: String,
+       unique: true
+    },
     section:{
        type: String
     },

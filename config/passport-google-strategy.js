@@ -4,6 +4,7 @@ var GoogleStrategy = require('passport-google-oauth20').Strategy;
 const keys = require('../config/keys');
 const User = require('../model/user');
 const crypto = require('crypto');
+const { v4: uuidv4 } = require('uuid');
 
 //passport is saving user id in cookie 
 passport.serializeUser(function(user, done){
@@ -37,7 +38,8 @@ passport.use(new GoogleStrategy({
             userName: profile.displayName,
             email: profile.emails[0].value,
             googleId: profile.id,
-            password: crypto.randomBytes(20).toString('hex')
+            password: crypto.randomBytes(20).toString('hex'),
+            roomId: uuidv4()
           }).save().then((newUser) => {
               console.log('created new user: ', newUser);
               return done(null, newUser);
