@@ -1,7 +1,10 @@
 
 <!-- user can join class using link -->
+
 <div id="join-class" class="modal" tabindex="-1">
+   
     <div class="modal-dialog">
+        
         <div class="modal-content">
            
             <div class="modal-title">
@@ -9,23 +12,31 @@
             </div>
 
             <div class="modal-body class-form">
-                <form action="/class/joinRoom" method="POST" class="class-info">   
+                <form action="/class/joinRoom" 
+                  method="POST" class="class-info"
+                >   
                     <div class="class-detail">
                         <p>Class Link *</p>
                         <input type="text" name="classLink" required>
                     </div>
+
                     <div>
                         <input type="submit" value="join">
                     </div>
+
                 </form>
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" 
+                  data-bs-dismiss="modal">Close
+                </button>
             </div>
 
         </div>
+        
     </div>
+
 </div>
 
 

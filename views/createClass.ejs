@@ -2,7 +2,9 @@
 <!-- loggedin user can create own class -->
 
 <div id="create-class" class="modal" tabindex="-1">
+    
     <div class="modal-dialog">
+
         <div class="modal-content">
            
             <div class="modal-title">
@@ -10,31 +12,40 @@
             </div>
            
             <div class="modal-body class-form">
-                <form action="/class/createRoom" method="POST" class="class-info">   
+
+                <form action="/class/createRoom" method="POST" class="class-info">  
+
                     <div class="class-detail">
                         <p>Class Name *</p>
                         <input type="text" name="className" required>
                     </div>
+
                     <div class="class-detail">
                         <p>Section</p>
                         <input type="text" name="section">
                     </div>
+
                     <div class="class-detail">
                         <p>Subject</p>
                         <input type="text" name="subject">
                     </div>
+
                     <div class="class-detail">
                         <p>ClassId *</p>
                         <input type="text" name="classId" required>
                     </div>
+
                     <div>
                         <input type="submit" value="create">
                     </div>
+
                 </form>
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" 
+                  data-bs-dismiss="modal">Close
+                </button>
             </div>
 
         </div>
