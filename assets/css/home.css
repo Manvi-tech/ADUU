@@ -24,24 +24,26 @@
     margin-left: 25%;
 }
 #header-image{
-    background-image: url('/images/img.jpg');
+    background-image: url('/images/header-img.jpg');
     height: 360px;
     width: 50%;
     background-size: contain;
     background-repeat: no-repeat;
+    margin-left: 30px;
 }
 
 @media screen and (max-width: 768px){
     #home-main{
         flex-direction: column;
         align-items: center;
+        padding-top: 50px;
     }
     #home-main h1{
         width: 100%;
         font-size: 40px;
     }
     #home-main #header-image{
-        height: 500px;
+        height: 230px;
         margin-top: 6vh;
         background-size: contain;
     }

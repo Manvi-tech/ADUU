@@ -2,40 +2,76 @@
 <!-- header bar -->
 
 <header>
+   
     <nav>
+       
         <input id="nav-toggle" type="checkbox">
+       
         <div class="logo">
             <img src="/images/favicon.png" alt="">  EduLive
         </div>
+       
         <ul class="links">
+           
             <li><a href="/">Home</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
+          
             <% if(locals.user){ %> 
+               
                 <li class="dropdown" style="padding: 0 0.3rem;">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                        Class
+                   
+                    <a class="dropdown-toggle" href="#" 
+                      role="button" id="dropdownMenuLink" 
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      Class
                     </a>
+
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><button class="dropdown-item" data-bs-target="#create-class" data-bs-toggle="modal">Create Class</button></li>
-                        <li><button class="dropdown-item" data-bs-target="#join-class" data-bs-toggle="modal">Join Class</button></li>
+                        <li>
+                            <button class="dropdown-item" 
+                               data-bs-target="#create-class" 
+                               data-bs-toggle="modal">Create Class
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dropdown-item" 
+                               data-bs-target="#join-class" 
+                               data-bs-toggle="modal">Join Class
+                            </button>
+                        </li>
                     </ul>
+
                 </li>
             <%}%>
            
             <% if(locals.user){ %> 
-                <li><a href="/user/profile"><%= locals.user.username %></a></li>
-                <li><a href="/auth/logout">Logout</a></li>
+
+                <li>
+                    <a href="/user/profile">
+                       <%= locals.user.username %>
+                    </a>
+                </li>
+                <li>
+                    <a href="/auth/logout">
+                        Logout
+                    </a>
+                </li>
+
             <% }else{ %>
+
                <li> <a href="/auth/loginPage">Account</a></li>
+            
             <% }%>
            
         </ul>
+        
         <label for="nav-toggle" class="icon-burger">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
         </label>
+
     </nav>
 </header>
 
