@@ -16,6 +16,7 @@ module.exports.profile = async function(req, res){
     });
 
     return res.render('profile',{
-        loggedInUser: currUser
+        loggedInUser: currUser,
+        title: 'EduLive | Profile'
     });
 }

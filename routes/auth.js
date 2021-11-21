@@ -11,7 +11,9 @@ router.get('/loginPage', function(req, res){
         return res.redirect('/user/profile');
     }
     else{
-        return res.render('accountLogin');
+        return res.render('accountLogin',{
+            title: 'EduLive|Account'
+        });
     }
 });
 

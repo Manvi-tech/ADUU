@@ -68,7 +68,8 @@ module.exports.enter = async function(req, res){
     .populate('creator');
 
     return res.render('classroom', {
-        classroom: classroom
+        classroom: classroom,
+        title: 'EduLive|Classroom'
     });
 }
 
@@ -78,7 +79,8 @@ module.exports.liveClass = async function(req, res){
         const classroom = await Class.findOne({roomId: req.params.roomid});
         // const user = await User.findById(req.user._id);
         return res.render('onlineClass', {
-            roomId: req.params.roomid
+            roomId: req.params.roomid,
+            title: 'EduLive | Live Class'
         });
     }catch(err){
         req.flash('error', err);
