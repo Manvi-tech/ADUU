@@ -15,6 +15,9 @@
     box-shadow: 5px 1px 3px 2px lightgray;
     padding: 5px;
     margin: 10px 0 20px 10px;
+    color: #0b0c0c;
+    font-size: 20px;
+    text-decoration: none;
 }
 .class-link .invite-link{
     margin-left: 2%;
@@ -26,6 +29,7 @@
     background-color: #eaf8ff;
     word-break: break-word;
     border: 1px solid lightgrey;
+    box-shadow: 5px 3px 3px 3px lightgray;
 }
 
 .live-class-student{

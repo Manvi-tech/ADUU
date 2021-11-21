@@ -100,7 +100,7 @@ module.exports.update = async function(req, res){
     }
 }
 
-// deleting class 
+// teacher deleting class 
 module.exports.delete = async function(req, res){
     try{
         //removing class from user's classrooms 
@@ -120,6 +120,30 @@ module.exports.delete = async function(req, res){
         delClass.remove();
 
         return res.redirect('back');
+
+    }catch(err){
+        console.log(err);
+        return res.redirect('back');
+    }
+}
+
+//student leaving class
+module.exports.leaveClass = async function(req, res){
+    try{
+        const classroom = await Class.findById(req.params.classid);
+        const user = await User.findById(req.user._id);
+        
+        if(classroom){
+             // removing student from studenst of classroom
+            let student = await Class.findByIdAndUpdate(classroom.id, { $pull: {students : user.id}});
+
+            // removing class from enrolled classes of student
+            let enrClass = await User.findByIdAndUpdate(user.id, { $pull: {enrolledClasses: classroom.id}});
+            
+            return res.redirect('back');
+        }else{
+            return res.redirect('back');
+        }
 
     }catch(err){
         console.log(err);

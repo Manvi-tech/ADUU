@@ -22,4 +22,7 @@ router.get('/live/:roomid', passport.checkAuthentication, classController.liveCl
 //delete classroom
 router.get('/delete/:classid', passport.checkAuthentication, classController.delete);
 
+//student leave classroom
+router.get('/leave/:classid', passport.checkAuthentication, classController.leaveClass);
+
 module.exports = router;

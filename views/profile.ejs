@@ -9,7 +9,7 @@
                 <div class="class">
                     <div class="class-top">
                         <div class="left">
-                            <span class="class-name"><%= i.className %>: <%= loggedInUser.username %> </span>
+                            <span class="class-name"><%= i.className %> By: <%= loggedInUser.username %> </span>
                             <span>Subject: <%= i.subject %></span>
                             <span>Section: <%= i.section %></span>
                         </div>
@@ -22,7 +22,6 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                               <li><a class="dropdown-item" href="/class/enter/<%= i._id%>">Edit</a></li>
                               <li><a class="dropdown-item" href="/class/delete/<%= i._id %>">Delete</a></li>
-                              <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                             </ul>
                         </div>
 
@@ -45,16 +44,28 @@
             <% for(i of loggedInUser.enrolledClasses){ %> 
                 <% if(i.creator.id != loggedInUser.id){ %>
                     <div class="class">
+                        
                         <div class="class-top">
-                          <div class="left">
-                            <span class="class-name"><%= i.className %>: <%= i.creator.username %> </span>
-                            <span>Subject: <%= i.subject %></span>
-                            <span>Section: <%= i.section %></span>
-                          </div>
+                            <div class="left">
+                                <span class="class-name"><%= i.className %> By: <%= i.creator.username %> </span>
+                                <span>Subject: <%= i.subject %></span>
+                                <span>Section: <%= i.section %></span>
+                            </div>
+                          <!-- leave class --> 
+                            <div class="dropdown">
+                                <button class="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="/class/leave/<%= i._id%>">Leave</a></li>
+                                </ul>
+                            </div>
                         </div>
+
                         <div class="class-mid">
                             <img src="/images/avatar.png" alt="">
                         </div>
+                       
                         <div class="class-bottom">
                             <div>
                                 <a href="/class/enter/<%= i.id %>">Enter Class</a>

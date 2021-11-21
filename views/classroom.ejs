@@ -7,7 +7,7 @@
 
          <!--class details edit -->
          <% if(locals.user.id == classroom.creator.id){ %> 
-            <div class="class-form" style="margin: 6% 3% 0% 6%;">
+            <div class="class-form" style="margin: 6% 3% 0% 6%; box-shadow: 5px 3px 3px 5px lightgray;">
                 <h1>Class Details</h1>
                 <form action="/class/update/<%= classroom.id %>" method="post" class="class-info">
                     <div class="class-detail">
