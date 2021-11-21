@@ -7,12 +7,7 @@ module.exports.profile = async function(req, res){
     .populate('classRooms')
     .populate({
         path: 'enrolledClasses',
-        populate:{
-            path: 'creator'
-        },
-        populate:{
-            path: 'students'
-        }
+        populate: 'creator'
     });
 
     return res.render('profile',{
