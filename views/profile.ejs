@@ -1,6 +1,6 @@
-<body>
+<body id="profile">
 
-    <!-- classrooms of loggedIn User -->
+    <!-- classrooms: loggedIn User is teacher-->
     <section id="my-classrooms">
         <h2> My ClassRoom</h2>
        
@@ -39,6 +39,7 @@
             <%}%>
         </div>
 
+        <!-- classrooms: loggedInUser is student -->
         <h2>Enrolled ClassRooms</h2>
         <div class="my-classes">
             <% for(i of loggedInUser.enrolledClasses){ %> 

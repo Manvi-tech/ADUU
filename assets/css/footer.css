@@ -5,6 +5,10 @@ footer{
 	margin-top:6vh;
 	background-color: #fcfbc2;
 }
+footer h3{
+	padding: 30px 0 20px 0;
+	font-size: 30px;
+}
 
 .text-black{
 	font-family: 'Lobster', cursive;
