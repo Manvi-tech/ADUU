@@ -1,0 +1,23 @@
+
+<!-- displaying students of class -->
+
+<aside id="class-members">
+
+    <!-- teacher -->
+    <div>
+        <h2>Teacher</h2>
+        <p><i class="fas fa-chalkboard-teacher"></i> <%= classroom.creator.username %></p>
+    </div>
+
+
+    <!-- students -->
+    <div id="students-list">
+        <h2>Students</h2>
+        <% for(student of classroom.students){ %>
+             <div>
+                 <p><i class="fas fa-user-graduate"></i> <%= student.username %></p>
+             </div>
+        <%}%>
+    </div>
+
+</aside>

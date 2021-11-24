@@ -1,12 +1,18 @@
 
+#live-class{
+    background-color: black;
+}
+
 #live-class #video-grid{
    display: flex;
    justify-content: center;
+   flex-wrap: wrap;
 }
 
 #live-class video{
-    height: 300px;
-    width: 400px;
+    height: 200px;
+    width: 250px;
+    margin-right: 10px;
     object-fit: cover;
 }
 
@@ -21,22 +27,41 @@
     flex-direction: column;
 }
 
-#live-class .main__right {
-    flex: 0.2
-}
-
 #live-class .main__videos {
     flex-grow: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 85vh;
     padding: 40px;
     background-color: black;
 }
 
+#canvas{
+    background-color: white;
+    min-width: 700px;
+    min-height: 50vh;
+    width: 100%;
+}
+.colour{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+/* .main__videos #video-grid{
+   transform: translate(0,30vh);
+} */
+
 #live-class .main__right {
+    height: 100vh;
     border-left: 1px solid #3D3D42;
     background-color: #242324;
+    flex: 0.2;
+    flex-direction: column;
+}
+
+#live-class #main__right__chat, #main__right__participants{
+    display: none;
 }
 
 #live-class .main__controls {
@@ -44,7 +69,6 @@
     display: flex;
     justify-content: space-between;
     padding: 5px;
-    background-color: #1C1E20;
 }
 
 #live-class .main__controls__block {
@@ -66,13 +90,11 @@
     border-radius: 5px;
 }
 
-#live-class .main__controls__button i {
-    font-size: 24px;
+#live-class .main__controls__button i{
+    font-size: 16px;
 }
-
-#live-class .main__right {
-    display: flex;
-    flex-direction: column;
+#live-class .main__controls__button span{
+    font-size: 13px;
 }
 
 #live-class .main__header {
@@ -108,8 +130,9 @@
     color: #F5F5F5;
 }
 
-#live-class .leave_meeting {
+#live-class .leave_meeting a{
     padding: 5px;
+    text-decoration: none;
     background-color: #EB534B;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
@@ -120,11 +143,28 @@
     color: #CC3B33;
 }
 
+#live-class .main__controls__button #start-share{
+    display: inline-block;
+}
+#live-class .main__controls__button #stop-share{
+    display: none;
+}
+
 @media screen and (max-width: 768px){
     .main{
         flex-direction: column;
     }
     .main-left{
         flex-direction: row;
+    }
+    #live-class .main__controls__block {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #live-class .main__controls{
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        margin-bottom: 20px;
     }
 }

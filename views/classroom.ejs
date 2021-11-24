@@ -3,76 +3,82 @@
 
 <body>
 
-     <!-- header section -->
-     <%- include('_header') -%>
-  
-    <div id="classroom">
+   <!-- header section -->
+   <%- include('_header') -%>
 
-         <!--class details edit -->
-         <% if(locals.user.id == classroom.creator.id){ %> 
+   <div id="students-classroom">
 
-            <div class="class-form" 
-              style="margin: 6% 3% 0% 6%; 
-              box-shadow: 5px 3px 3px 5px lightgray;"
-            >
-                <h1>Class Details</h1>
+        <div id="classroom">
+            <!--teacher can edit class details  -->
+            <% if(locals.user.id == classroom.creator.id){ %> 
+
+                <div class="class-form" id="class-form-edit" 
+                style="margin: 6% 3% 0% 6%; 
+                box-shadow: 5px 3px 3px 5px lightgray;"
+                >
+                    <h1>Class Details</h1>
+                    
+                    <form action="/class/update/<%= classroom.id %>"
+                        method="post" class="class-info"
+                    >
+                        <div class="class-detail">
+                            <p>Class Name *</p>
+                            <input type="text" name="className" 
+                            placeholder="<%= classroom.className %>" required
+                            >
+                        </div>
+
+                        <div class="class-detail">
+                            <p>Section</p>
+                            <input type="text" name="section" 
+                            placeholder="<%= classroom.section %>" required
+                            >
+                        </div>
+
+                        <div class="class-detail">
+                            <p>Subject</p>
+                            <input type="text" name="subject" 
+                            placeholder="<%= classroom.subject %>"
+                            >
+                        </div>
+
+                        <div>
+                            <input type="submit" value="update">
+                        </div>
+                    </form>
+                </div>
                 
-                <form action="/class/update/<%= classroom.id %>"
-                     method="post" class="class-info"
-                 >
-                    <div class="class-detail">
-                        <p>Class Name *</p>
-                        <input type="text" name="className" 
-                          placeholder="<%= classroom.className %>" required
-                        >
+            <div class="class-link">
+                    <!-- class start -->
+                    <div class="live-class-teacher">
+                        <a href="/class/live/<%= classroom.roomId %>"> 
+                            Live ClassRoom
+                        </a>
                     </div>
 
-                    <div class="class-detail">
-                        <p>Section</p>
-                        <input type="text" name="section" 
-                           placeholder="<%= classroom.section %>" required
-                        >
+                    <div class="invite-link">
+                        <!-- class link -->
+                        <p> <b>Student Invite Link</b></p>
+                        <p><%= classroom.classLink %></p>
                     </div>
 
-                    <div class="class-detail">
-                        <p>Subject</p>
-                        <input type="text" name="subject" 
-                          placeholder="<%= classroom.subject %>"
-                        >
-                    </div>
-
-                    <div>
-                        <input type="submit" value="update">
-                    </div>
-                </form>
             </div>
-              
-           <div class="class-link">
+
+            <%}else{%>
                 <!-- class start -->
-                <div class="live-class-teacher">
+                <div class="live-class-student">
                     <a href="/class/live/<%= classroom.roomId %>"> 
                         Live ClassRoom
                     </a>
                 </div>
+            
+            <%}%>
 
-                <div class="invite-link">
-                     <!-- class link -->
-                    <p style="margin-bottom: -1px;">Invite Link</p>
-                    <p><%= classroom.classLink %></p>
-                </div>
+        </div>
 
-           </div>
+         <!-- students of class -->
+         <%- include('students') %>
 
-         <%}else{%>
-              <!-- class start -->
-              <div class="live-class-student">
-                <a href="/class/live/<%= classroom.roomId %>"> 
-                    Live ClassRoom
-                </a>
-             </div>
-        
-         <%}%>
-
-    </div>
+   </div>
 
 </body>

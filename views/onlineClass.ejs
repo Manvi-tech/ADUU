@@ -8,14 +8,14 @@
       <div class="main__left">
            
          <div class="main__videos">
-            <div id="video-grid">
-        
-            </div>
+            <div id="video-grid"></div>
          </div>
+
          <div class="main__controls">
               
             <div class="main__controls__block">
                  
+               <!-- audio btn -->
                <div onclick="muteUnmute()" 
                 class="main__controls__button main__mute_button"
                >
@@ -23,45 +23,61 @@
                   <span>Mute</span>
                </div>
                  
+               <!-- video btn -->
                <div onclick="playStop()" 
                  class="main__controls__button main__video_button" 
                >
                   <i class="fas fa-video"></i>
                   <span>Stop Video</span>
                </div>
+
+               <!-- screen share btn -->
+               <div onclick="shareScreen()"
+               class="main__controls__button"
+               >
+                  <i class="fas fa-upload"></i>
+                  <span id="start-share">Share Screen</span>
+                  <span id="stop-share">Stop Share</span>
+               </div>
               
             </div>
 
             <div class="main__controls__block">
-                 
-               <div class="main__controls__button">
-                  <i class="fas fa-upload"></i>
-                  <!-- <i class="fas fa-external-link-square-alt"></i> -->
-                  <span>Share Screen</span>
-               </div>
-                 
-               <div class="main__controls__button">
+                   
+               <!-- participants btn -->
+               <div class="main__controls__button" onclick="showParticipants()">
                   <i class="fas fa-user-friends"></i>
                   <span>Participants</span>
                </div>
                  
-               <div class="main__controls__button">
+               <!-- chat btn -->
+               <div class="main__controls__button" onclick="chatShow()">
                   <i class="fas fa-comment-alt"></i>
                   <span>Chat</span>
                </div>
 
+               <!-- board btn -->
+               <div class="main__controls__button" onclick="whiteBoard()">
+                  <i class="fas fa-pencil-alt"></i>
+                  <span>White Board</span>
+               </div>
+
             </div>
-              
+            
+              <!-- leave meeting -->
             <div class="main__controls__block">
                <div class="main__controls__button">
-                  <span class="leave_meeting">Leave Meeting</span>
+                  <span class="leave_meeting">
+                     <a href="/user/profile"> Leave Meeting</a>
+                  </span>
                </div>
              </div>
 
          </div>
       </div>
 
-      <div class="main__right">
+      <!-- showing chat messages list -->
+      <div class="main__right" id="main__right__chat">
          
          <div class="main__header">
             <h6>Chat Messages</h6>
@@ -77,10 +93,28 @@
          </div>
       </div>
 
+      <!-- showing participants list -->
+      <div class="main__right" id="main__right__participants">
+         
+         <div class="main__header">
+            <h6>Participants</h6>
+         </div>
+           
+         <div class="participants_list">
+            <ul id="participants">
+            </ul>
+         </div>
+
+      </div>
+
    </div>
 
    <script>
       const ROOM_ID = '<%= roomId %>'
+      const USER_ID = '<%= userId %>'
+      const USER_NAME = '<%= userName%>'
+      const USER_EMAIL = '<%= userEmail%>'
    </script>
+
    
 </body>

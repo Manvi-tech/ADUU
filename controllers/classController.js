@@ -65,7 +65,8 @@ module.exports.join = async function(req, res){
 // entering classroom where all details are there about that class
 module.exports.enter = async function(req, res){
     const classroom = await Class.findById(req.params.classid)
-    .populate('creator');
+    .populate('creator')
+    .populate('students');
 
     return res.render('classroom', {
         classroom: classroom,
@@ -73,17 +74,33 @@ module.exports.enter = async function(req, res){
     });
 }
 
-//teacher starting a class
+//joining a live class
 module.exports.liveClass = async function(req, res){
     try{
         const classroom = await Class.findOne({roomId: req.params.roomid});
-        // const user = await User.findById(req.user._id);
+        const user = await User.findById(req.user._id);
+
         return res.render('onlineClass', {
             roomId: req.params.roomid,
+            userId: user.id,
+            userName: user.username,
+            userEmail: user.email,
             title: 'EduLive | Live Class'
         });
     }catch(err){
         req.flash('error', err);
+        console.log(err);
+        return res.redirect('back');
+    }
+}
+
+// exiting live class
+module.exports.exitLiveClass = async function(req, res){
+    try{
+        const classroom = await Class.findOne({roomId: req.params.roomid});
+        return res.redirect('/user/profile');
+        
+    }catch(err){
         console.log(err);
         return res.redirect('back');
     }

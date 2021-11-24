@@ -1,12 +1,23 @@
 
 /* specific classroom */
+
+#students-classroom{
+    display: flex;
+}
+
 #classroom{
     display: flex;
-    flex-wrap: wrap;
+    width: 82%;
+}
+
+#classroom #class-form-edit{
+    width: 450px;
+    height: 400px;
+    margin: 6% 0% 3% 1%;
 }
 
 #classroom .class-link{
-    margin: 6% 3% 3% 3%;
+    margin: 6% 2% 3% 1%;
     display: flex;
     flex-direction: column;
 }
@@ -14,7 +25,7 @@
     background-color: pink;
     box-shadow: 5px 1px 3px 2px lightgray;
     padding: 5px;
-    margin: 10px 0 20px 10px;
+    margin: 10px 0 20px 3%;
     color: #0b0c0c;
     font-size: 20px;
     text-decoration: none;
@@ -23,7 +34,7 @@
     margin-left: 2%;
     margin-top: 30px;
     padding-left: 2%;
-    max-width: 600px;
+    max-width: 400px;
     height: auto;
     max-height: 100px;
     background-color: #eaf8ff;
@@ -32,10 +43,48 @@
     box-shadow: 5px 3px 3px 3px lightgray;
 }
 
-.live-class-student{
+.live-class-student {
     background-color: pink;
     box-shadow: 5px 1px 3px 2px lightgray;
-    padding: 5px;
     margin: 80px 0 40px 40px;
+    height: 35px;
+    padding: 5px;
 }
 
+.live-class-student a{
+    color: #0b0c0c;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#class-members{
+    padding: 6% 0% 3% 1%;
+    background-color: #eeecec;
+    min-height: 100vh;
+    width: 19%;
+    display: flex;
+    flex-direction: column;
+    
+}
+#class-members > div{
+    float: right;
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 768px){
+   #classroom, #students-classroom{
+       flex-direction: column;
+       align-items: center;
+       margin-bottom: 20px;
+   }  
+
+   #classroom .class-link{
+       margin-top: 50px;
+       margin-left: -15px;
+   }
+   
+   #class-members{
+       display: none !important;
+   }
+
+}
