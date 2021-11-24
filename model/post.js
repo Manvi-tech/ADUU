@@ -3,6 +3,12 @@ const mongoose = require('mongoose');
 
 const postSchema = new mongoose.Schema({
     
+    // post text info 
+    postContent:{
+        type: String,
+        required: true
+    },
+
     // teacher who posted
     creator: {
         type: mongoose.Schema.Types.ObjectId,
@@ -11,7 +17,7 @@ const postSchema = new mongoose.Schema({
     },
 
     // post is of which class
-    class:{
+    postClass:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Class',
         required: true

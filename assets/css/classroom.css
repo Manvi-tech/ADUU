@@ -12,8 +12,9 @@
 
 #classroom #class-form-edit{
     width: 450px;
-    height: 400px;
-    margin: 6% 0% 3% 1%;
+    height: 330px;
+    margin: 6% 0% 0% 3%;
+    box-shadow: 5px 3px 3px 5px lightgray;
 }
 
 #classroom .class-link{
@@ -82,7 +83,10 @@
        margin-top: 50px;
        margin-left: -15px;
    }
-   
+   #classroom #class-form-edit{
+       margin:5% 3% 3% 10%;
+       width: 400px;
+   }
    #class-members{
        display: none !important;
    }

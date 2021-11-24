@@ -1,0 +1,29 @@
+
+<!-- ------------------  create, display post in class ------------------->
+
+<section id="post-section">
+
+    <!-- create post -->
+    <div id="post-form">
+        <form action="/post/create/<%= classroom.id %>" method="post">
+            <div>
+                <!-- post content -->
+                Announce Something To Your Class
+                <textarea name="postContent" 
+                  cols="100" rows="5" required>
+                </textarea>
+            </div>
+
+            <div id="upload-file">
+                   <!-- files/iamge upload -->
+                   <input type="file" name="postFiles">
+
+                   <!-- submit -->
+                   <input type="submit" value="submit">
+
+            </div>
+        </form>
+    </div>
+
+
+</section>

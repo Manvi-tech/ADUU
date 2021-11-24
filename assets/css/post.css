@@ -1,0 +1,37 @@
+
+#post-form{
+    width: 800px;
+    min-width: 450px;
+    margin: -125px 50px 50px 40px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px 0 rgb(60 64 67 / 30%),
+                0 4px 8px 3px rgb(60 64 67 / 15%);
+}
+
+#post-form textarea{
+    border: none;
+    background-color: #f8f9fa;
+    margin: 10px 5px;
+}
+
+#post-form #upload-file{
+    display: flex;
+    justify-content: space-between;
+}
+
+#post-form input[type=submit]{
+    border: none;
+    font-weight: bold;
+    box-shadow: 1px 2px 1px 1px lightgrey;
+}
+
+@media screen and (max-width: 768px){
+    #post-form{
+        margin: 50px 5%;
+        width: 85% !important;
+    }
+    #post-form textarea{
+        width: 400px;
+    }
+}
