@@ -7,7 +7,12 @@
 
 #classroom{
     display: flex;
+    flex-direction: column;
     width: 82%;
+}
+
+#classroom-info{
+    display: flex;
 }
 
 #classroom #class-form-edit{
@@ -47,7 +52,7 @@
 .live-class-student {
     background-color: pink;
     box-shadow: 5px 1px 3px 2px lightgray;
-    margin: 80px 0 40px 40px;
+    margin: 80px 0 10px 40px;
     height: 35px;
     padding: 5px;
 }
@@ -73,17 +78,17 @@
 }
 
 @media screen and (max-width: 768px){
-   #classroom, #students-classroom{
+   #classroom-info, #students-classroom{
        flex-direction: column;
        align-items: center;
        margin-bottom: 20px;
    }  
 
-   #classroom .class-link{
+   #classroom-info .class-link{
        margin-top: 50px;
        margin-left: -15px;
    }
-   #classroom #class-form-edit{
+   #classroom-info #class-form-edit{
        margin:5% 3% 3% 10%;
        width: 400px;
    }

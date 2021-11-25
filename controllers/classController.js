@@ -3,6 +3,7 @@ const Class = require('../model/class');
 const User = require('../model/user');
 const bcryptjs = require('bcryptjs');
 const { v4: uuidv4 } = require('uuid');
+const Post = require('../model/post');
 
 //submiting create class form, and adding it into db
 module.exports.createRoom = async function(req, res){
@@ -64,12 +65,17 @@ module.exports.join = async function(req, res){
 
 // entering classroom where all details are there about that class
 module.exports.enter = async function(req, res){
+    
     const classroom = await Class.findById(req.params.classid)
     .populate('creator')
     .populate('students');
+    
+    const posts = await Post.find({postClass: classroom._id})
+    .populate('creator');
 
     return res.render('classroom', {
         classroom: classroom,
+        posts:  posts,
         title: 'EduLive|Classroom'
     });
 }

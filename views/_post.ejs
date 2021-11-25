@@ -26,4 +26,56 @@
     </div>
 
 
+    <!-- displaying posts on home page -->
+    <div id="posts-list-container">
+        <% for(post of posts){ %>
+            <div id="post">
+                    <div id="post-top">
+
+                        <div>
+                            <!-- user who created post -->
+                            <img src="/images/avatar.png" alt="image">
+                            <span><%= post.creator.username %></span>
+                        </div>
+                        
+                        <!-- user who created this post can delete it -->
+                        <% if(post.creator.id == locals.user.id) {%> 
+                            <!-- edit or delete class --> 
+                            <div class="dropdown">
+                                <button class="btn" type="button" 
+                                id="dropdownMenuButton1" 
+                                data-bs-toggle="dropdown" 
+                                aria-expanded="false"
+                                >
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+
+                                <ul class="dropdown-menu" 
+                                aria-labelledby="dropdownMenuButton1"
+                                >
+                                    <li>
+                                        <a class="dropdown-item" 
+                                        href="/post/delete/<%= post.id%>">Delete
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        <%}%>
+
+                    </div>
+
+                    <!-- post content -->
+                    <div id="post-middle">
+                        <%= post.postContent %>
+                    </div>
+
+                    <!-- post comment form -->
+
+                
+            </div>
+        <%} %>
+
+    </div>
+
+
 </section>

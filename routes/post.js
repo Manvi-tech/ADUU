@@ -4,7 +4,11 @@ const router = express.Router();
 const passport= require('passport');
 const postController = require('../controllers/postController');
 
-// posting post-form data
+// create post in class
 router.post('/create/:classid', passport.checkAuthentication,postController.createPost);
+
+// delete post
+router.get('/delete/:postid', passport.checkAuthentication, postController.deletePost);
+
 
 module.exports = router;
