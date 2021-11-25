@@ -49,6 +49,6 @@ my menteeship at Microsoft Engage 2021.
 ## 🚩 Connect with me
 Drop by and say hello!
 
-[<img height="30" src="https://img.shields.io/badge/linkedin-0077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />][LinkedIn]
+[<img height="20" src="https://img.shields.io/badge/linkedin-0077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />][LinkedIn]
 
 [linkedIn]: https://www.linkedin.com/in/manvi-bansal-8649821a1/
