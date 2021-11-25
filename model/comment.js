@@ -19,13 +19,15 @@ const commentSchema = new mongoose.Schema({
     // comment is on which post
     post:{
        type: mongoose.Schema.Types.ObjectId,
-       ref: 'Post'  
+       ref: 'Post',
+       required: true  
     },
 
     // comment is on post of which class
-    coomentClass:{
+    commentClass:{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Class'
+        ref: 'Class',
+        required: true
     }
    
 },{

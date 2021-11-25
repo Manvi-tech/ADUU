@@ -14,7 +14,7 @@ module.exports.createPost = async function(req, res){
                    creator: req.user._id,
                    postClass: classroom.id
                });
-               
+               console.log(newPost)
                classroom.posts.push(newPost);
                classroom.save();
 

@@ -6,18 +6,19 @@ const Post = require('../model/post');
 // creating comment, adding it to post of class
 module.exports.createComment = async function(req, res){
     try{
+        // post on which comment is made
+        var commentPost = await Post.findById(req.params.postid);
         
-        const post = await Post.findById(req.params.postid);
-        if(post){
+        if(commentPost){
             const newComment = await Comment.create({
                 creator: req.user._id,
                 post: req.params.postid,
-                commentClass: post.postClass,
+                commentClass: commentPost.postClass._id,
                 commentContent: req.body.commentContent
             });
   
-            post.comments.push(newComment);
-            post.save();
+            commentPost.comments.push(newComment);
+            commentPost.save();
             req.flash('success', 'comment published');
             return res.redirect('back');
   

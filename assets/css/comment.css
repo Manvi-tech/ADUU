@@ -1,15 +1,43 @@
 
+#comments-list-container{
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid lightgrey;
+    /* margin-bottom: 20px; */
+}
+#comments-list-container #comment-top{
+    display: flex;
+}
 
+#comment-top #comment-info{
+    width: 85%;
+    margin: 10px 30px;
+    padding-left: 20px;
+}
+#comment-info i{
+    color: grey;
+}
+#comment-info span{
+    text-transform: capitalize;
+    color: grey;
+    margin-left: 5px;
+}
 #comment-form{
     display: inline-block;
-    width: 95%;
+    width: 100%;
     margin: 10px 10px 10px 10px;
-    padding: 5px;
+    padding-top: 20px;
 }
 
 #comment-form form{
     display: flex;
     padding-left: 25px;
+}
+
+#comment-form button[type=submit]{
+    border: none;
+    background-color: transparent;
+    margin-left: 15px;
 }
 
 #comment-form #user-img img{
@@ -32,7 +60,3 @@
     margin-left: 15px;
 }
 
-#comment-form label{
-    float: right;
-    margin-left: 15px;
-}

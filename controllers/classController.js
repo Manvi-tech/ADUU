@@ -78,8 +78,14 @@ module.exports.enter = async function(req, res){
     .populate('students');
     
     const posts = await Post.find({postClass: classroom._id})
-    .populate('creator');
-
+    .populate('creator')
+    .populate({
+        path: 'comments',
+        populate:{
+            path: 'creator'
+        }
+    });
+    
     return res.render('classroom', {
         classroom: classroom,
         posts:  posts,

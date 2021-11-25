@@ -1,21 +1,68 @@
 
-<!-- comment form -->
+<!-- display comments of post -->
+<div id="comments-list-container">
+    
+    <% for(comment of post.comments){ %> 
+          
+        <div id="comment">
+            
+            <div id="comment-top">
+                <div id="comment-info">
+                    <i class="far fa-user"></i> 
+                    <span>
+                        <%= comment.creator.username%>: 
+                    </span> &nbsp;&nbsp;
+                    <%= comment.commentContent %> 
+                </div>
 
-<div id="comment-form">
-    <form action="/comment/create/<%= post.id %>" method="post">
-        <!-- user img -->
-        <div id="user-img">
-            <img src="/images/user.png" alt="user">
+                <!-- user who created this post can delete it or the creator of class -->
+                <% if(comment.creator.id ==locals.user.id || classroom.creator.id == locals.user.id) {%> 
+                    <!-- edit or delete class --> 
+                    <div class="dropdown">
+                        <button class="btn" type="button" 
+                        id="dropdownMenuButton1" 
+                        data-bs-toggle="dropdown" 
+                        aria-expanded="false"
+                        >
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+
+                        <ul class="dropdown-menu" 
+                        aria-labelledby="dropdownMenuButton1"
+                        >
+                            <li>
+                                <a class="dropdown-item" 
+                                href="/comment/delete/<%= comment.id%>">Delete
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                <%}%>
+
+            </div>
+
         </div>
-        <!-- submit -->
-        <div id="send-btn">
-            <input type="text" placeholder="add class comment" 
-                name="commentContent" required
-            >
-            <label for="comment-add-btn">
-                <i class="far fa-paper-plane"></i>
-            </label>
-            <input type="submit" id="comment-add-btn" value="" style="display: none;">
-        </div>
-    </form>
+        
+     <%}%>
+
+     <!-- comment form -->
+    <div id="comment-form">
+        <form action="/comment/create/<%= post._id %>" method="post">
+            <!-- user img -->
+            <div id="user-img">
+                <img src="/images/user.png" alt="user">
+            </div>
+            <!-- submit -->
+            <div id="send-btn">
+                <input type="text" placeholder="add class comment" 
+                    name="commentContent" required
+                >
+                <button type="submit">
+                    <i class="far fa-paper-plane"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+
 </div>
+
