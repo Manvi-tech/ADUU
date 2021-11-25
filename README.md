@@ -44,7 +44,7 @@ my menteeship at Microsoft Engage 2021.
 <img src="https://github.com/Manvi-tech/ADUU/blob/master/screenshots/about.PNG" height="400" width="800"/>
 <img src="https://github.com/Manvi-tech/ADUU/blob/master/screenshots/account.PNG" height="400" width="800"/>
 <img src="https://github.com/Manvi-tech/ADUU/blob/master/screenshots/joinClass.PNG" height="400" width="800">
-<img src="https://github.com/Manvi-tech/ADUU/blob/master/screenshots/createClass.PNG" height="400" width="800">
+<img src="https://github.com/Manvi-tech/ADUU/blob/master/screenshots/createClass.PNG" height="550" width="800">
 <img src="https://github.com/Manvi-tech/ADUU/blob/master/screenshots/screen.PNG" height="400" width="800"/>
 <img src="https://github.com/Manvi-tech/ADUU/blob/master/screenshots/classroom.PNG" height="500" width="800"/>
 <img src="https://github.com/Manvi-tech/ADUU/blob/master/screenshots/board.PNG" height="400" width="800"/>
