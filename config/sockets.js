@@ -9,9 +9,9 @@ module.exports.Socket = function(server){
             socket.join(roomId);
             socket.to(roomId).emit('user-connected', userId);
           
-            socket.on('message', (message) => {
+            socket.on('message', (message, username, useremail) => {
                 //send message to the same room
-                io.to(roomId).emit('createMessage', message)
+                io.to(roomId).emit('createMessage', message, username, useremail)
             });
 
             socket.on('draw', (lastX, lastY, offsetX, offsetY, pencilColor, pencilWidth) => {

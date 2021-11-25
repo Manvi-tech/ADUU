@@ -2,6 +2,7 @@
 
 const Post = require('../model/post');
 const Class = require('../model/class');
+const Comment = require('../model/comment');
 
 // post created in classroom
 module.exports.createPost = async function(req, res){
@@ -14,7 +15,6 @@ module.exports.createPost = async function(req, res){
                    creator: req.user._id,
                    postClass: classroom.id
                });
-               console.log(newPost)
                classroom.posts.push(newPost);
                classroom.save();
 
@@ -50,6 +50,7 @@ module.exports.deletePost =async function(req, res){
          return res.redirect('back');
 
     }catch(err){
+        console.log(err);
         req.flash('error', 'unable to delete post')
         return res.redirect('back');
     }

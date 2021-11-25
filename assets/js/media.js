@@ -48,9 +48,12 @@ navigator.mediaDevices.getUserMedia({
         }
     });
 
-    socket.on("createMessage", message, senderName, senderEmail => {
-        console.log(senderEmail, senderName);
-        $(".messages").append(`<li class="message"><b>${senderName}</b> (@${senderEmail})<br/>${message}</li>`);
+    socket.on("createMessage", (message,username,useremail) => {
+        $(".messages").append(`<li class="message">
+                                 <div style="text-transform: capitalize;">
+                                   ${username}: ${message}
+                                 </div>
+                                </li>`);
         scrollToBottom();
     });
 })
