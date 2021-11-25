@@ -13,6 +13,7 @@
 
 #classroom-info{
     display: flex;
+    margin-left: 25px;
 }
 
 #classroom #class-form-edit{
@@ -23,7 +24,7 @@
 }
 
 #classroom .class-link{
-    margin: 6% 2% 3% 1%;
+    margin: 6% 2% 3% 3%;
     display: flex;
     flex-direction: column;
 }

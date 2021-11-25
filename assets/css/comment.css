@@ -1,0 +1,37 @@
+
+
+#comment-form{
+    display: inline-block;
+    width: 95%;
+    margin: 10px 10px 10px 10px;
+    padding: 5px;
+}
+
+#comment-form form{
+    display: flex;
+    padding-left: 25px;
+}
+
+#comment-form #user-img img{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+
+#comment-form #send-btn{
+    display: flex;
+    align-items: center;
+    width: 85%;
+}
+#comment-form input[type=text]{
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    width: 94%;
+    background-color: transparent;
+    margin-left: 15px;
+}
+
+#comment-form label{
+    float: right;
+    margin-left: 15px;
+}

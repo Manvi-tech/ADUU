@@ -34,7 +34,7 @@
 }
 
 #posts-list-container #post{
-    width: 60%;
+    width: 75%;
     min-width: 380px;
     min-height: 150px;
     margin-bottom: 50px;
@@ -63,7 +63,13 @@
 }
 
 #post #post-middle{
-    padding: 0 2rem;
+    padding: 0.5rem 2.8rem;
+}
+
+#post #post-bottom{
+    width: 100%;
+    margin-top: 10px;
+    border-top: 1px solid lightgrey;
 }
 
 @media screen and (max-width: 768px){
