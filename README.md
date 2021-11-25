@@ -31,7 +31,6 @@ my menteeship at Microsoft Engage 2021.
 | 3   | **Audio, Video, Screen Sharing, Chat, Board, Deployment, Board**  Set up socket.io, peerjs, uuid, Mute/Unmute Audio, Video, Add messages in chat box, Write on White Board, Leave Live Class  |  Live Classroom features added, Deployed |
 
 
-
 ## 🚩 Technologies
 
 - **Languages:** HTML, CSS3, Javascript
@@ -41,9 +40,14 @@ my menteeship at Microsoft Engage 2021.
 - **Libraries:** jQuery, Noty.js, Peer.js, Socket.io,  Uuid 
 
 
-
 ## 🚩 Screenshots
 <img src="https://github.com/Manvi-tech/ADUU/blob/master/screenshots/about.PNG" height="400" width="800"/>
+<img src="https://github.com/Manvi-tech/ADUU/blob/master/screenshots/screen.PNG" height="400" width="800"/>
+<img src="https://github.com/Manvi-tech/ADUU/blob/master/screenshots/classroom.PNG" height="400" width="800"/>
+<img src="https://github.com/Manvi-tech/ADUU/blob/master/screenshots/board.PNG" height="400" width="800"/>
+<img src="https://github.com/Manvi-tech/ADUU/blob/master/screenshots/home.PNG" height="400" width="800"/>
+<img src=""/>
+
 
 ## 🚩 Connect with me
 Drop by and say hello!
