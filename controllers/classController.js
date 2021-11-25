@@ -4,6 +4,7 @@ const User = require('../model/user');
 const bcryptjs = require('bcryptjs');
 const { v4: uuidv4 } = require('uuid');
 const Post = require('../model/post');
+const Comment = require('../model/comment')
 
 //submiting create class form, and adding it into db
 module.exports.createRoom = async function(req, res){
@@ -41,7 +42,6 @@ module.exports.join = async function(req, res){
             // checking if user already present inside the class
             if(i.id == currUser.id){
                 userEnrolled = true;
-                console.log('2')
                 break;
             } 
         }
@@ -97,7 +97,7 @@ module.exports.enter = async function(req, res){
 //joining a live class
 module.exports.liveClass = async function(req, res){
     try{
-        const classroom = await Class.findOne({roomId: req.params.roomid});
+        // const classroom = await Class.findOne({roomId: req.params.roomid});
         const user = await User.findById(req.user._id);
 
         return res.render('onlineClass', {
@@ -117,7 +117,7 @@ module.exports.liveClass = async function(req, res){
 // exiting live class
 module.exports.exitLiveClass = async function(req, res){
     try{
-        const classroom = await Class.findOne({roomId: req.params.roomid});
+        // const classroom = await Class.findOne({roomId: req.params.roomid});
         return res.redirect('/user/profile');
         
     }catch(err){
@@ -152,6 +152,10 @@ module.exports.delete = async function(req, res){
              student.enrolledClasses.pull(req.params.classid);
              student.save();
         }
+
+        // remove posts of this class and comments of those posts
+        await Comment.deleteMany({_id:{$in: classroom.posts}});
+        await Post.deleteMany({postClass : classroom.id, onModel:'Post'});
 
         // delete class
         delClass.remove();
