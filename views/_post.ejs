@@ -35,7 +35,10 @@
                         <div>
                             <!-- user who created post -->
                             <img src="/images/avatar.png" alt="image">
-                            <span><%= post.creator.username %></span>
+                            <span>
+                                <%= post.creator.username %>, 
+                                <small style="margin-left:5px;"><%= date %></small>
+                            </span>
                         </div>
                         
                         <!-- user who created this post can delete it -->

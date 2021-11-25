@@ -4,6 +4,11 @@ const mongoose = require('mongoose');
 
 const commentSchema = new mongoose.Schema({
     
+     commentContent:{
+         type: String,
+         required: true
+     },
+
     // who created the comment
     creator: {
         type: mongoose.Schema.Types.ObjectId,
@@ -18,7 +23,7 @@ const commentSchema = new mongoose.Schema({
     },
 
     // comment is on post of which class
-    class:{
+    coomentClass:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Class'
     }

@@ -63,6 +63,13 @@ module.exports.join = async function(req, res){
     return res.redirect('back');
 }
 
+const monthNames = ["January", "February", "March", "April", "May", "June",
+"July", "August", "September", "October", "November", "December"
+];
+var dateObj = new Date();
+var today = monthNames[dateObj.getUTCMonth() + 1]
+today = today + ' '+ dateObj.getUTCDate();
+
 // entering classroom where all details are there about that class
 module.exports.enter = async function(req, res){
     
@@ -76,6 +83,7 @@ module.exports.enter = async function(req, res){
     return res.render('classroom', {
         classroom: classroom,
         posts:  posts,
+        date: today,
         title: 'EduLive|Classroom'
     });
 }

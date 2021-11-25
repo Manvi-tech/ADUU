@@ -9,6 +9,7 @@ router.use('/user', require('./user'));
 router.use('/auth', require('./auth'));
 router.use('/class', require('./class'));
 router.use('/post', require('./post'));
+router.use('/comment', require('./comment'));
 
 router.get('/live-board', (req, res)=> {
     return res.render('board',{

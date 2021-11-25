@@ -24,7 +24,8 @@
     width: 85%;
 }
 #comment-form input[type=text]{
-    border: 1px solid lightgrey;
+    border: none;
+    border-bottom: 1px solid lightgrey;
     border-radius: 8px;
     width: 94%;
     background-color: transparent;
