@@ -52,7 +52,7 @@ my menteeship at Microsoft Engage 2021.
 
 ## 🚩 Deployment
 
-- AduLive: [Link](https://github.com/Apurva-tech/unite/edit/main/README.md)
+- AduLive: [https://adu-live.herokuapp.com/](https://github.com/Apurva-tech/unite/edit/main/README.md)
 
 ## 🚩 Connect with me
 Drop by and say hello!
