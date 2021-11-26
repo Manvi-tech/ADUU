@@ -1,10 +1,11 @@
 
-const Class = require('../model/class');
-const User = require('../model/user');
+const mongoose = require('../config/mongoose')
+const Class = mongoose.model('Class');
+const User = mongoose.model('User');
 const bcryptjs = require('bcryptjs');
 const { v4: uuidv4 } = require('uuid');
-const Post = require('../model/post');
-const Comment = require('../model/comment')
+const Post = mongoose.model('Post');
+const Comment = mongoose.model('Comment')
 
 //submiting create class form, and adding it into db
 module.exports.createRoom = async function(req, res){

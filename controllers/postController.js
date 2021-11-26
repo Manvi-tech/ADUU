@@ -1,8 +1,8 @@
 
-
-const Post = require('../model/post');
-const Class = require('../model/class');
-const Comment = require('../model/comment');
+const mongoose= require('../config/mongoose');
+const Post = mongoose.model('Post');
+const Class = mongoose.model('Class');
+const Comment = mongoose.model('Comment');
 
 // post created in classroom
 module.exports.createPost = async function(req, res){

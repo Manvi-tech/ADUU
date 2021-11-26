@@ -1,5 +1,6 @@
 
-const User = require('../model/user');
+const mongoose= require('../config/mongoose')
+const User = mongoose.model('User');
 
 module.exports.profile = async function(req, res){
 

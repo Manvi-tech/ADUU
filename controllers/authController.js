@@ -1,5 +1,5 @@
 
-// const User = require('../model/user');
+
 const mongoose= require('../config/mongoose')
 const User = mongoose.model('User');
 

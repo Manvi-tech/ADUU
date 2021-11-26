@@ -1,7 +1,7 @@
 
-
-const Comment = require('../model/comment');
-const Post = require('../model/post');
+const mongoose= require('../config/mongoose')
+const Comment = mongoose.model('Comment');
+const Post = mongoose.model('Post');
 
 // creating comment, adding it to post of class
 module.exports.createComment = async function(req, res){
