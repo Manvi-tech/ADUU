@@ -51,7 +51,8 @@ my menteeship at Microsoft Engage 2021.
 <img src="https://github.com/Manvi-tech/ADUU/blob/master/screenshots/home.PNG" height="400" width="800"/>
 
 ## 🚩 Deployment
-- [Deployed Link](https://github.com/Apurva-tech/unite/edit/main/README.md)
+
+- AduLive: [Link](https://github.com/Apurva-tech/unite/edit/main/README.md)
 
 ## 🚩 Connect with me
 Drop by and say hello!
