@@ -1,5 +1,7 @@
 
-const User = require('../model/user');
+// const User = require('../model/user');
+const mongoose= require('../config/mongoose')
+const User = mongoose.model('User');
 
 //user posting signup form
 module.exports.userSignUp = async function(req, res){

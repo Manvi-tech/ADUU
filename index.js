@@ -5,6 +5,12 @@ const app = express();
 const path = require('path');
 
 const db = require('./config/mongoose');
+
+require('./model/class');
+require('./model/comment');
+require('./model/post');
+require('./model/user');
+
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const passport = require('passport');
@@ -48,7 +54,7 @@ app.use(session({
     },
     store: MongoStore.create(
         {
-            mongoUrl: db,
+            mongoUrl: keys.mongodb.url,
             ttl: 14 * 24 * 60 * 60 
         },
         function(err){
