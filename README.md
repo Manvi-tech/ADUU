@@ -1,7 +1,7 @@
 
 #  🚩  AduLive: Education Platform
 
-AduLive is a web application, 
+AduLive ([https://adu-live.herokuapp.com/](https://github.com/Apurva-tech/unite/edit/main/README.md)) is a web application, 
 designed to connect teachers with their students.
 Developed as a redesign of Google Classroom during 
 my menteeship at Microsoft Engage 2021.
