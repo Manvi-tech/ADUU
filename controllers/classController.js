@@ -85,7 +85,7 @@ module.exports.enter = async function(req, res){
             path: 'creator'
         }
     });
-    
+    students.push(locals.user);
     return res.render('classroom', {
         classroom: classroom,
         posts:  posts,
