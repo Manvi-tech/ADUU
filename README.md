@@ -1,5 +1,5 @@
 
-#  🚩  EduLive: Education Platform
+#  🚩  AduLive: Education Platform
 
 EduLive is a web application, 
 designed to connect teachers with their students.
