@@ -5,7 +5,7 @@ module.exports = {
         clientSecret: process.env.CLIENT_SECRET
     },
     session:{
-        name: process.env.env.SESSION_NAME,
+        name: process.env.SESSION_NAME,
         cookieKey: process.env.COOKIE_KEY
     },
     mongodb:{
