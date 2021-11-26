@@ -72,26 +72,32 @@ today = today + ' '+ dateObj.getUTCDate();
 
 // entering classroom where all details are there about that class
 module.exports.enter = async function(req, res){
-    
-    const classroom = await Class.findById(req.params.classid)
-    .populate('creator')
-    .populate('students');
-    
-    const posts = await Post.find({postClass: classroom._id})
-    .populate('creator')
-    .populate({
-        path: 'comments',
-        populate:{
-            path: 'creator'
-        }
-    });
-    students.push(locals.user);
-    return res.render('classroom', {
-        classroom: classroom,
-        posts:  posts,
-        date: today,
-        title: 'EduLive|Classroom'
-    });
+   try{
+        const classroom = await Class.findById(req.params.classid)
+        .populate('creator')
+        .populate('students');
+        
+        const posts = await Post.find({postClass: classroom._id})
+        .populate('creator')
+        .populate({
+            path: 'comments',
+            populate:{
+                path: 'creator'
+            }
+        });
+        
+        return res.render('classroom', {
+            classroom: classroom,
+            posts:  posts,
+            date: today,
+            title: 'EduLive|Classroom'
+        });
+   }
+    catch(err){
+       console.log(err);
+       return res.redirect('back');
+   }
+   
 }
 
 //joining a live class

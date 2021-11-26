@@ -1,6 +1,6 @@
 
 const express = require('express');
-const port = 9000;
+const port = process.env.PORT || 9000;
 const app = express();
 const path = require('path');
 
@@ -39,7 +39,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 app.use(session({
-    name: 'dncjdnc',
+    name: keys.session.name,
     secret: keys.session.cookieKey,
     saveUninitialized: false,
     resave: false,
@@ -48,7 +48,7 @@ app.use(session({
     },
     store: MongoStore.create(
         {
-            mongoUrl: 'mongodb://localhost/education_platform_db',
+            mongoUrl: db,
             ttl: 14 * 24 * 60 * 60 
         },
         function(err){
