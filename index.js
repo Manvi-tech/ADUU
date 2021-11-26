@@ -37,6 +37,7 @@ app.use(express.urlencoded({extended:false}));
 //to access ejs instead of html from views
 const expressLayout = require('express-ejs-layouts');
 app.use(expressLayout);
+
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
 
